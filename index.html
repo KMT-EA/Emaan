@@ -1,0 +1,51 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Password Protected Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    #password-form {
+      margin-top: 100px;
+    }
+    #password-input {
+      padding: 10px;
+      font-size: 16px;
+    }
+    #submit-btn {
+      padding: 20px 40px;
+      font-size: 20px;
+      background-color: blue;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div id="password-form">
+    <form id="passwordForm">
+      <input type="password" id="password-input" placeholder="Enter password" required>
+      <button type="submit" id="submit-btn">BIG BLUE BUTTON</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("passwordForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      var password = document.getElementById("password-input").value;
+      if (password === "Khalas") {
+        window.location.href = "another_page.html";
+      } else {
+        alert("Incorrect password. Please try again.");
+      }
+    });
+  </script>
+</body>
+</html>

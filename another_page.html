@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to Emaan's World</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      overflow: hidden;
+    }
+    #content {
+      margin-top: 50px;
+      line-height: 1.6;
+    }
+    .heart {
+      width: 10px;
+      height: 10px;
+      background-color: red;
+      position: absolute;
+      animation: heartAnimation 1s infinite cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    }
+    @keyframes heartAnimation {
+      0% {
+        transform: scale(1) rotate(45deg);
+        opacity: 0.8;
+      }
+      50% {
+        transform: scale(1.3) rotate(45deg);
+        opacity: 0.5;
+      }
+      100% {
+        transform: scale(1) rotate(45deg);
+        opacity: 0.8;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="content">
+    <h1>Welcome to Emaan's World</h1>
+    <p>Emaan is a wonderful person. She has a heart of gold and a smile that can light up the darkest room. Her kindness knows no bounds, and her beauty shines from within. Emaan is not only beautiful on the outside but also on the inside. She has a radiant personality that makes everyone around her feel loved and appreciated. She is truly one of a kind, and her presence brings joy to all who know her.</p>
+    <p>Emaan believes in spreading love and kindness wherever she goes. She believes that even the smallest act of kindness can make a big difference in someone's day. Whether it's a warm smile, a kind word, or a helping hand, Emaan is always there for her friends and family.</p>
+    <p>One of the things that make Emaan unique is her ability to see the beauty in everything and everyone. She believes that beauty is all around us, we just have to open our eyes and look for it. Whether it's a breathtaking sunset, a field of flowers, or the smile of a loved one, beauty can be found everywhere if you know where to look.</p>
+    <p>But perhaps the most beautiful thing about Emaan is her heart. Her heart is filled with love, compassion, and kindness, and she is always ready to share it with those around her. She believes that love is the most powerful force in the world, and she strives to spread as much love as she can, wherever she goes.</p>
+    <p>One of Emaan's greatest strengths is her ability to make everyone around her feel loved and appreciated. She has a way of brightening up even the darkest days, and her presence brings joy to all who know her. Whether it's a kind word, or a listening ear, Emaan is always there for her friends and family.</p>
+    <p>Thank you for visiting Emaan's world. She hopes that you leave here feeling a little lighter, a little happier, and a little more loved. Remember, you are always welcome here, in Emaan's world.</p>
+  </div>
+  <script>
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.style.left = Math.random() * window.innerWidth + "px";
+      heart.style.top = Math.random() * window.innerHeight + "px";
+      document.body.appendChild(heart);
+      setTimeout(() => {
+        heart.remove();
+      }, 2000);
+    }
+
+    setInterval(createHeart, 500);
+  </script>
+</body>
+</html>
