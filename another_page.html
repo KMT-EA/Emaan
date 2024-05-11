@@ -11,13 +11,29 @@
       background-image: url('https://t4.ftcdn.net/jpg/02/90/87/69/360_F_290876973_mCltaYqk3G8FWiszXxrCwzUL5wmbGHSt.jpg');
       background-size: cover;
       background-position: center;
+      margin: 0;
+      padding: 0;
     }
     #content {
       margin-top: 50px;
       line-height: 1.6;
       background-color: rgba(255, 255, 255, 0.7);
-      padding: 20px;
+      padding: 40px;
       border-radius: 10px;
+      max-width: 600px;
+      margin: 50px auto;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    }
+    h1 {
+      color: #333;
+      font-size: 36px;
+      margin-bottom: 20px;
+      animation: pulse 1.5s infinite;
+    }
+    p {
+      color: #666;
+      font-size: 18px;
+      margin-bottom: 20px;
     }
     .heart {
       width: 10px;
@@ -38,6 +54,17 @@
       100% {
         transform: scale(1) rotate(45deg);
         opacity: 0.8;
+      }
+    }
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.05);
+      }
+      100% {
+        transform: scale(1);
       }
     }
   </style>
