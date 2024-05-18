@@ -8,24 +8,20 @@
     body {
       font-family: Arial, sans-serif;
       text-align: center;
+      background-image: url('https://t4.ftcdn.net/jpg/02/90/87/69/360_F_290876973_mCltaYqk3G8FWiszXxrCwzUL5wmbGHSt.jpg');
+      background-size: cover;
+      background-position: center;
       margin: 0;
       padding: 0;
-      overflow-x: hidden;
-    }
-    .parallax {
-      background-image: url('https://t4.ftcdn.net/jpg/02/90/87/69/360_F_290876973_mCltaYqk3G8FWiszXxrCwzUL5wmbGHSt.jpg');
-      background-attachment: fixed;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      min-height: 100vh;
     }
     #content {
+      margin-top: 50px;
+      line-height: 1.6;
+      background-color: rgba(255, 255, 255, 0.7);
       padding: 40px;
       border-radius: 10px;
       max-width: 600px;
-      margin: 0 auto;
-      background-color: rgba(255, 255, 255, 0.7);
+      margin: 50px auto;
       box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
     }
     h1 {
@@ -71,27 +67,87 @@
         transform: scale(1);
       }
     }
-    .garden-image {
-      width: 100%;
-      transition: transform 0.5s ease;
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      margin-top: 20px;
     }
-    .garden-image:hover {
-      transform: scale(1.05);
+    button:hover {
+      background-color: #45a049;
+    }
+    .popup {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.5);
+    }
+    .popup-content {
+      background-color: white;
+      margin: 15% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 600px;
+      text-align: center;
+      border-radius: 10px;
+    }
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .popup img {
+      max-width: 100%;
+      height: auto;
+      margin-top: 20px;
     }
   </style>
 </head>
 <body>
-  <div class="parallax">
-    <div id="content">
-      <h1>Welcome to Emaan's World</h1>
-      <p>Emaan is a wonderful person. She has a heart of gold and a smile that can light up the darkest room. Her kindness knows no bounds, and her beauty shines from within. Emaan is not only beautiful on the outside but also on the inside. She has a radiant personality that makes everyone around her feel loved and appreciated. She is truly one of a kind, and her presence brings joy to all who know her.</p>
-      <p>Emaan believes in spreading love and kindness wherever she goes. She believes that even the smallest act of kindness can make a big difference in someone's day. Whether it's a warm smile, a kind word, or a helping hand, Emaan is always there for her friends and family.</p>
-      <p>One of the things that make Emaan unique is her ability to see the beauty in everything and everyone. She believes that beauty is all around us, we just have to open our eyes and look for it. Whether it's a breathtaking sunset, a field of flowers, or the smile of a loved one, beauty can be found everywhere if you know where to look.</p>
-      <p>But perhaps the most beautiful thing about Emaan is her heart. Her heart is filled with love, compassion, and kindness, and she is always ready to share it with those around her. She believes that love is the most powerful force in the world, and she strives to spread as much love as she can, wherever she goes.</p>
-      <p>One of Emaan's greatest strengths is her ability to make everyone around her feel loved and appreciated. She has a way of brightening up even the darkest days, and her presence brings joy to all who know her. Whether it's a warm hug, a kind word, or a listening ear, Emaan is always there for her friends and family.</p>
-      <p>Thank you for visiting Emaan's world. She hopes that you leave here feeling a little lighter, a little happier, and a little more loved. Remember, you are always welcome here, in Emaan's world.</p>
+  <div id="content">
+    <h1>Welcome to Emaan's World</h1>
+    <p>Emaan is a wonderful person. She has a heart of gold and a smile that can light up the darkest room. Her kindness knows no bounds, and her beauty shines from within. Emaan is not only beautiful on the outside but also on the inside. She has a radiant personality that makes everyone around her feel loved and appreciated. She is truly one of a kind, and her presence brings joy to all who know her.</p>
+    <p>Emaan believes in spreading love and kindness wherever she goes. She believes that even the smallest act of kindness can make a big difference in someone's day. Whether it's a warm smile, a kind word, or a helping hand, Emaan is always there for her friends and family.</p>
+    <p>One of the things that make Emaan unique is her ability to see the beauty in everything and everyone. She believes that beauty is all around us, we just have to open our eyes and look for it. Whether it's a breathtaking sunset, a field of flowers, or the smile of a loved one, beauty can be found everywhere if you know where to look.</p>
+    <p>But perhaps the most beautiful thing about Emaan is her heart. Her heart is filled with love, compassion, and kindness, and she is always ready to share it with those around her. She believes that love is the most powerful force in the world, and she strives to spread as much love as she can, wherever she goes.</p>
+    <p>One of Emaan's greatest strengths is her ability to make everyone around her feel loved and appreciated. She has a way of brightening up even the darkest days, and her presence brings joy to all who know her. Whether it's a warm hug, a kind word, or a listening ear, Emaan is always there for her friends and family.</p>
+    <p>Thank you for visiting Emaan's world. She hopes that you leave here feeling a little lighter, a little happier, and a little more loved. Remember, you are always welcome here, in Emaan's world.</p>
+    <button id="openPopup">Open Anniversary Card</button>
+  </div>
+
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <span class="close" id="closePopup">&times;</span>
+      <h1>Happy Anniversary, Emaan!</h1>
+      <p>
+        My dearest Emaan,<br><br>
+        It's been an incredible year with you. Every moment spent together has been a testament to your beauty, both inside and out. Your kindness, strength, and grace have made this past year the best of my life.<br><br>
+        Looking back, I am amazed at how much we have grown together. From our first date to now, our bond has only deepened and strengthened. We've faced challenges and celebrated triumphs, each step bringing us closer and making our love stronger.<br><br>
+        I am so grateful to have you by my side, and I look forward to all the wonderful moments we will continue to share. Here's to us and many more years of love and happiness.<br><br>
+        With all my love,<br>
+        [Your Name]
+      </p>
+      <img src="anniversary.jpg" alt="Happy Anniversary">
     </div>
   </div>
+
   <script>
     function createHeart() {
       const heart = document.createElement("div");
@@ -105,6 +161,26 @@
     }
 
     setInterval(createHeart, 500);
+
+    document.addEventListener("DOMContentLoaded", function() {
+      var openPopupButton = document.getElementById("openPopup");
+      var closePopupButton = document.getElementById("closePopup");
+      var popup = document.getElementById("popup");
+
+      openPopupButton.addEventListener("click", function() {
+        popup.style.display = "block";
+      });
+
+      closePopupButton.addEventListener("click", function() {
+        popup.style.display = "none";
+      });
+
+      window.addEventListener("click", function(event) {
+        if (event.target === popup) {
+          popup.style.display = "none";
+        }
+      });
+    });
   </script>
 </body>
 </html>
